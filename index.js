@@ -73,7 +73,7 @@
 // }
 // }
 
-//Throw (hata fırlatır) amk komutu çalışmıyor
+//Throw (hata fırlatır) if ile yap 
 
 // var ad = "mehmet";
 
@@ -258,15 +258,15 @@ let ogrenciler =  [
     yas: 22
   },
   { id: 6,
-    ad: "Ayşe Aydın",
+    ad: "Mert Aydın",
     yas: 22
   },
   { id: 7,
-    ad: "Erdal Aydın",
+    ad: "Melih Aydın",
     yas: 22
   },
   { id: 8,
-    ad: "Salih Aydın",
+    ad: "Olga Aydın",
     yas: 22
   },
 ];
@@ -277,10 +277,19 @@ const getUser=(deger)=>{
     resolve(deger);
   });
 };
+let getInfo = parseInt(prompt('Öğrenci ID giriniz: ',3));
+let again=0;
+getUser(getInfo)
+.then((data,again)=>{
 
-getUser(3)
-.then((data)=>{
-  console.log(ogrenciler.find(b=>{
-    if(b.id == data) return true;
-  }));
+    console.log(ogrenciler.find(b=>{
+      if(b.id == data) return true;
+      
+      
+    }));
+  
+  
 });
+
+
+
